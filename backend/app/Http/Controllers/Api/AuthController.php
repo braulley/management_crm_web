@@ -12,19 +12,20 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
+
         // grab credentials from the request
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('email', 'password');        
 
         // attempt to verify the credentials and create a token for the user
         if (!$token = JWTAuth::attempt($credentials)) {
             return response()->json(['error' => 'invalid_credentials'], 401);
-        }
+        }        
         
-        //$user = JWTAuth::parseToken()->authenticate();
+        $user = JWTAuth::authenticate($token);
 
 
         // all good so return the token
-        return response()->json(compact('token'));
+        return response()->json(compact('token', 'user'));
     }
 
 

@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.authService.login(this.f.value).subscribe(
-      (response) => {console.log(response); },
-      (errorResponse: HttpErrorResponse) => {console.log(errorResponse); }
+      (response) => {console.log(response); }
     );
   }
 
