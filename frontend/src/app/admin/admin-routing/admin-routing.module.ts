@@ -1,3 +1,4 @@
+import { AuthGuardService } from './../../guards/auth-guard.service';
 import { AdminDashboard2Component } from './../admin-dashboard2/admin-dashboard2.component';
 import { AdminDashboard1Component } from './../admin-dashboard1/admin-dashboard1.component';
 import { AdminComponent } from './../admin.component';
@@ -10,7 +11,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'admin',
-        component: AdminComponent,
+        component: AdminComponent, canActivate: [AuthGuardService], canActivateChild: [AuthGuardService],
         children: [
           {
             path: '',

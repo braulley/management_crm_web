@@ -9,6 +9,10 @@
             <small>Área Restrita X</small>
           </h1>
           <br/>
+          <div class="alert alert-warning alert-dismissible" *ngIf = "errorCredentials" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>AVISO!</strong> Usuário ou Senha incorreta.
+          </div>
           <form [formGroup]="f" novalidate>
             <div class="form-group has-feedback" [ngClass]="{'has-success': f.controls['email'].valid,
                 'has-error': f.controls['email'].invalid && (f.controls['email'].touched || f.controls['email'].dirty)}">

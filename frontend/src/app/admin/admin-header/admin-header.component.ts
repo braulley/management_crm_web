@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  constructor() { }
+  auth: any;
+  constructor(private authService: AuthService) {
+    this.auth = this.authService.getUser().name;
+   }
+
+   logout (e) {
+    e.preventDefault();
+    this.authService.logout();
+   }
 
   ngOnInit() {
   }
