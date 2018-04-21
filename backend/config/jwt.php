@@ -44,10 +44,11 @@ return [
     | within. I.E. The user can refresh their token within a 2 week window of
     | the original token being created until they must re-authenticate.
     | Defaults to 2 weeks
+    
     |
     */
 
-    'refresh_ttl' => 20160,
+    'refresh_ttl' =>20160 ,
 
     /*
     |--------------------------------------------------------------------------

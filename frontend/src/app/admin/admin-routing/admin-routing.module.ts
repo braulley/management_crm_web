@@ -5,6 +5,7 @@ import { AdminComponent } from './../admin.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ProfileComponent } from '../../auth/profile/profile.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,10 @@ import { RouterModule } from '@angular/router';
           {
             path: 'dashboard2',
             component: AdminDashboard2Component
+          },
+          {
+            path: 'profile',
+            component: ProfileComponent
           }
         ]
       }
